@@ -1,24 +1,52 @@
 .pg-h1 {
-  font-size: 120px;
+  font-size: 48px;
   line-height: 1.1;
+
+  @include sm { font-size: 72px; }
+
+  @include lg { font-size: 96px; }
+
+  @include xl { font-size: 120px; }
 }
 .pg-h2 {
-  font-size: 80px;
+  font-size: 36px;
   line-height: 1.11;
+
+  @include sm { font-size: 56px; }
+
+  @include lg { font-size: 72px; }
+
+  @include xl { font-size: 80px; }
 }
 .pg-h3 {
-  font-size: 64px;
+  font-size: 28px;
   line-height: 1.2;
+
+  @include sm { font-size: 40px; }
+
+  @include lg { font-size: 56px; }
+
+  @include xl { font-size: 64px; }
 }
 .pg-h4 {
-  font-size: 40px;
+  font-size: 22px;
   line-height: 1.25;
+
+  @include sm { font-size: 28px; }
+
+  @include lg { font-size: 36px; }
+
+  @include xl { font-size: 40px; }
 }
 .pg-h5 {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.25;
+
+  @include sm { font-size: 24px; }
 }
 .pg-h6 {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.4;
+
+  @include sm { font-size: 20px; }
 }

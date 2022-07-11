@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./components/header.ejs') -%>
+
+  <body>
+    <a href="index.html" class="my-btn">Back</a>
+    <div class="container mx-auto px-5">
+      <section data-name="color" class="-mx-2 flex flex-wrap text-3xl child:px-2">
+        <%
+        <!-- prettier-ignore -->
+        const COLORS = [
+          'bg-pg-red', 'bg-pg-yellow', 'bg-pg-green',
+          'bg-pg-dark', 'bg-pg-light'
+        ]
+        for(var i = 0; i < COLORS.length; i++ ){
+          const color = COLORS[i];
+          const colorName = color.replace('bg-', '');
+        %>
+        <div class="mb-3 w-1/4">
+          <my-code>
+            <div class="<%=color%>">
+              <div class="flex h-[75px] items-center justify-center">
+                <%=TAILWIND_COLORS[colorName].DEFAULT%>
+              </div>
+            </div>
+          </my-code>
+        </div>
+        <% } %>
+      </section>
+    </div>
+  </body>
+</html>

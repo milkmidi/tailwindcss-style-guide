@@ -53,13 +53,13 @@
     overflow: hidden;
     overflow-x: auto;
     padding: 1rem;
-    min-width: 18rem;
     font-size: 16px;
     color: white;
     background-color: #2d3436;
     border-radius: 8px;
   }
   .my-btn {
+    display: inline-block;
     padding: 6px 24px;
     font-size: 20px;
     font-weight: bold;

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./components/header.ejs') -%>
+
+  <body>
+    <a href="index.html" class="my-btn">Back</a>
+    <div class="container mx-auto">
+      <section data-name="button">
+        <div class="-mx-2 flex flex-wrap child:px-2">
+          <%
+          <!-- prettier-ignore -->
+          const SIZE = ['--sm', '', '--lg', '--xl', '--2xl'];
+          for(let i =0; i < SIZE.length ; i++ ){
+            const s = SIZE[i];
+          %>
+          <div class="mb-3 w-1/3">
+            <my-code class="bg-white">
+              <button
+                data-class="pg-btn pg-btn<%=s%> pg-btn--red"
+                class="pg-btn<%=s%> pg-btn--red pg-btn">
+                BUTTON
+              </button>
+            </my-code>
+          </div>
+          <% } %>
+        </div>
+
+        <hr />
+        <div class="-mx-2 flex flex-wrap child:px-2">
+          <%
+          <!-- prettier-ignore -->
+          for(let i =0; i < SIZE.length ; i++ ){
+            const s = SIZE[i];
+          %>
+          <div class="mb-3 w-1/3">
+            <my-code class="bg-white">
+              <button
+                data-class="pg-btn pg-btn<%=s%> pg-btn--black"
+                class="pg-btn<%=s%> pg-btn pg-btn--black">
+                BUTTON
+              </button>
+            </my-code>
+          </div>
+          <% } %>
+        </div>
+
+        <div class="-mx-2 flex flex-wrap child:px-2">
+          <%
+          <!-- prettier-ignore -->
+          for(let i =0; i < SIZE.length ; i++ ){
+            const s = SIZE[i];
+          %>
+          <div class="mb-3 w-1/3">
+            <my-code class="bg-white">
+              <button
+                disabled
+                data-class="pg-btn pg-btn<%=s%> pg-btn--black"
+                class="pg-btn<%=s%> pg-btn pg-btn--black">
+                BUTTON
+              </button>
+            </my-code>
+          </div>
+          <% } %>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

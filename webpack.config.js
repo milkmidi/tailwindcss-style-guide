@@ -8,6 +8,7 @@ const chokidar = require('chokidar');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const DEV_MODE = process.env.NODE_ENV === 'development';
+const tailwindConfig = require('./tailwind.config.js')
 
 const createHtml = (name, chunks = []) => {
   return new HtmlWebpackPlugin({
@@ -111,6 +112,7 @@ const webpackConfig = {
             options: {
               data: {
                 BUILD_INFO: new Date().toJSON(),
+                TAILWIND_COLORS: tailwindConfig.theme.extend.colors
               },
               // esModule: false,
             },
@@ -174,6 +176,9 @@ const webpackConfig = {
     }),
     createHtml('index'),
     createHtml('01-Typography'),
+    createHtml('02-Color'),
+    createHtml('03-GridSystem'),
+    createHtml('04-Components'),
     /* new CopyWebpackPlugin([
       { from: 'assets/copy', to: './', ignore: ['.*'] },
     ]), */
