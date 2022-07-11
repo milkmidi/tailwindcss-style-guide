@@ -54,11 +54,10 @@ module.exports = {
           'font-family': "'proxima-nova', 'Roboto', 'Helvetica Neue', Arial, sans-serif",
         },
         '.pg-font-raleway': { 'font-family': 'raleway, sans-serif' },
-        // https://www.figma.com/file/RnU3fa91zVpbk6VOhnE2zs/.com-2022?node-id=3813%3A12692
         '.pg-container-section': { 'max-width': '2560px' },
         '.pg-container-outer': { 'max-width': '1720px' },
         '.pg-container-inner': { 'max-width': '1240px' },
-        // Components https://www.figma.com/file/RnU3fa91zVpbk6VOhnE2zs/.com-2022?node-id=1576%3A23674
+        // Components
         '.pg-btn': {
           '--pg-btn-height': '40px',
           '--pg-btn-font-size': '14px',
