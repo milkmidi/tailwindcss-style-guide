@@ -1,3 +1,4 @@
+import './css/app.scss';
 
 class MyCode extends HTMLElement {
   constructor(){
@@ -15,7 +16,7 @@ class MyCode extends HTMLElement {
     requestAnimationFrame(()=> {
       const icon = this.querySelector('.my-code__fa');
       icon.addEventListener('click', ()=> {
-        console.log('click');
+        console.log('clipboard', className);
         navigator.clipboard.writeText(className);
       })
     });

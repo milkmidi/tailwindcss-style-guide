@@ -1,27 +1,31 @@
+// https://ithelp.ithome.com.tw/articles/10232650
 module.exports = {
-  extends: ['stylelint-config-standard'],
-  plugins: ['stylelint-order'],
+  extends: ['stylelint-config-standard-scss'],
+  plugins: ['stylelint-scss', 'stylelint-order'],
+  overrides: [
+    {
+      files: ['**/*.(scss|css|html|vue)'],
+      customSyntax: 'postcss-scss',
+    },
+    {
+      files: ['**/*.(html|vue)'],
+      customSyntax: 'postcss-html',
+    },
+  ],
   rules: {
-    'at-rule-no-unknown': [
+    'scss/at-rule-no-unknown': [
       true,
       {
-        ignoreAtRules: [
-          'tailwind',
-          'apply',
-          'variants',
-          'responsive',
-          'screen',
-        ],
+        ignoreAtRules: ['tailwind', 'apply', 'layer'],
       },
     ],
-    'declaration-block-trailing-semicolon': null,
-    'no-descending-specificity': null,
     'string-quotes': null,
     'selector-no-qualifying-type': null,
     'color-named': null,
     'font-family-name-quotes': null,
     'max-nesting-depth': null,
     'rule-empty-line-before': 'never',
+    'scss/dollar-variable-pattern': null,
     'selector-class-pattern': null,
     'selector-pseudo-class-no-unknown': null,
     'order/properties-alphabetical-order': null,

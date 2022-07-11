@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./components/header.ejs') -%>
+
+<body>
+  <a href="index.html" class="my-btn">Back</a>
+  <div class="container mx-auto px-5">
+    <section data-name="font-family" class="space-y-5 text-5xl">
+      <my-code>
+        <h1 class="pg-font-proxima-nova">Proxima Nova</h1>
+      </my-code>
+      <my-code>
+        <h1 class="pg-font-raleway">Proxima Nova</h1>
+      </my-code>
+    </section>
+
+    <section data-name="font-weight" class="text-3xl">
+      <h1>直接使用 tailwindcss 的設定</h1>
+      <a class="my-btn" href="https://tailwindcss.com/docs/font-weight">
+        tailwind font-weight
+      </a>
+    </section>
+
+    <section data-name="font-size" class="space-y-5 text-5xl">
+      <my-code>
+        <div class="pg-h1">
+          <span class="text-pg-red">120px</span>
+          Heading1
+        </div>
+      </my-code>
+      <my-code>
+        <div class="pg-h2">
+          <span class="text-pg-red">80px</span>
+          Heading2
+        </div>
+      </my-code>
+      <my-code>
+        <div class="pg-h3">
+          <span class="text-pg-red">64px</span>
+          Heading3
+        </div>
+      </my-code>
+      <my-code>
+        <div class="pg-h4">
+          <span class="text-pg-red">40px</span>
+          Heading4
+        </div>
+      </my-code>
+      <my-code>
+        <div class="pg-h5">
+          <span class="text-pg-red">24px</span>
+          Heading5
+        </div>
+      </my-code>
+      <my-code>
+        <div class="pg-h6">
+          <span class="text-pg-red">20px</span>
+          Heading6
+        </div>
+      </my-code>
+    </section>
+  </div>
+</body>
+
+</html>

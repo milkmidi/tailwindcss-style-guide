@@ -1,0 +1,20 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "loose": true,
+        "useBuiltIns": false,
+        "targets": {
+          "node": "current",
+          "browsers": [
+            "> 0.2%",
+            "last 1 versions",
+            "not IE <= 11"
+          ]
+        }
+      }
+    ]
+  ]
+}
