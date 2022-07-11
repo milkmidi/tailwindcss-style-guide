@@ -1,0 +1,71 @@
+@layer components {
+  my-code {
+    display: block;
+    border: 1px solid #ccc;
+  }
+  section + section {
+    margin-top: 10px;
+  }
+  section,
+  .debug {
+    position: relative;
+    padding: 40px 20px;
+    border: 3px solid black;
+    border-radius: 0.25rem;
+    &[data-name] {
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0.2rem 1rem;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        background-color: #27ae60;
+        border-radius: 0.25rem;
+        z-index: 1;
+        content: attr(data-name);
+        pointer-events: none;
+      }
+    }
+  }
+  .my-code-wrap {
+    position: relative;
+    .my-code__fa {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 10px;
+      display: block;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        color: #ddd;
+      }
+      &:active {
+        color: #aaa;
+      }
+    }
+  }
+  .my-code {
+    position: relative;
+    overflow: hidden;
+    overflow-x: auto;
+    padding: 1rem;
+    min-width: 18rem;
+    font-size: 16px;
+    color: white;
+    background-color: #2d3436;
+    border-radius: 8px;
+  }
+  .my-btn {
+    padding: 6px 24px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 50px;
+    transition: all 0.2s;
+  }
+}

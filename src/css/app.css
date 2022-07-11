@@ -1,0 +1,11 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'https://use.typekit.net/pyo8ghh.css';
+
+/**  Raleway */
+@import 'https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap';
+
+/* components.css */
+@import './_includes/_typography.css';
+@import './_includes/_development.css'; /* 本機開發用 */

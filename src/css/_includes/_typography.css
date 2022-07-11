@@ -1,0 +1,24 @@
+.pg-h1 {
+  font-size: 120px;
+  line-height: 1.1;
+}
+.pg-h2 {
+  font-size: 80px;
+  line-height: 1.11;
+}
+.pg-h3 {
+  font-size: 64px;
+  line-height: 1.2;
+}
+.pg-h4 {
+  font-size: 40px;
+  line-height: 1.25;
+}
+.pg-h5 {
+  font-size: 24px;
+  line-height: 1.25;
+}
+.pg-h6 {
+  font-size: 20px;
+  line-height: 1.4;
+}
