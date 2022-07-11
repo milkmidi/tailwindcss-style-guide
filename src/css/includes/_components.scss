@@ -1,3 +1,44 @@
+.pg-btn {
+  --pg-btn-height: 40px;
+  --pg-btn-font-size: 14px;
+
+  padding-right: 24px;
+  padding-left: 24px;
+  height: var(--pg-btn-height);
+  font-size: var(--pg-btn-font-size);
+  border-radius: 8px;
+
+  @apply inline-flex justify-center items-center;
+  &:disabled,
+  &[data-disabled="true"] {
+    color: #878787 !important;
+    background-color: #b8b8b8 !important;
+    pointer-events: none;
+  }
+  &.pg-btn--sm {
+    --pg-btn-height: 32px;
+    --pg-btn-font-size: 12px;
+  }
+  &.pg-btn--lg {
+    --pg-btn-height: 48px;
+    --pg-btn-font-size: 16px;
+  }
+  &.pg-btn--xl {
+    --pg-btn-height: 58px;
+    --pg-btn-font-size: 18px;
+  }
+  &.pg-btn--2xl {
+    --pg-btn-height: 68px;
+    --pg-btn-font-size: 24px;
+  }
+  &.pg-btn--red {
+    @apply bg-pg-red text-white hover:bg-pg-red-hover active:bg-pg-red-active;
+  }
+  &.pg-btn--black {
+    @apply bg-black text-white hover:bg-pg-black-hover active:bg-pg-black-active;
+  }
+}
+
 @keyframes check-mark {
   0% {
     background-position-y: 5px;
@@ -10,29 +51,66 @@
   }
 }
 .pg-checkbox {
-  --mark-color: white;
+  --checkmark-color: white;
 
   width: 20px;
   height: 20px;
   appearance: none;
-  background-color: var(--checkbox-color);
+  background-color: var(--active-color);
+  cursor: pointer;
   &[data-checked="true"],
   &:checked {
     background-repeat: no-repeat;
-    background-color: var(--checkbox-color);
-    border-color: var(--checkbox-color);
+    background-color: var(--active-color);
+    border-color: var(--active-color);
     animation: check-mark 0.2s ease-in-out;
     background-image:
-      linear-gradient(-45deg, transparent 65%, var(--checkbox-color) 65.99%),
-      linear-gradient(45deg, transparent 75%, var(--checkbox-color) 75.99%),
-      linear-gradient(-45deg, var(--checkbox-color) 40%, transparent 40.99%),
-      linear-gradient(45deg, var(--checkbox-color) 30%, var(--mark-color) 30.99%, var(--mark-color) 40%, transparent 40.99%),
-      linear-gradient(-45deg, var(--mark-color) 50%, var(--checkbox-color) 50.99%);
+      linear-gradient(-45deg, transparent 65%, var(--active-color) 65.99%),
+      linear-gradient(45deg, transparent 75%, var(--active-color) 75.99%),
+      linear-gradient(-45deg, var(--active-color) 40%, transparent 40.99%),
+      linear-gradient(45deg, var(--active-color) 30%, var(--checkmark-color) 30.99%, var(--checkmark-color) 40%, transparent 40.99%),
+      linear-gradient(-45deg, var(--checkmark-color) 50%, var(--active-color) 50.99%);
   }
-  &.bg-pg-red {
-    --checkbox-color: var(--pg-red);
+  &.pg-checkbox--red {
+    --active-color: var(--pg-red);
+  }
+  &.pg-checkbox--black {
+    --active-color: black;
+  }
+  &:disabled {
+    --active-color: #ccc;
+    --checkmark-color: #e4e4e4;
+
+    pointer-events: none;
   }
 }
 .pg-mark--black {
-  --mark-color: black;
+  --checkmark-color: black;
+}
+
+@keyframes radio-mark {
+  0% {
+    box-shadow: 0 0 0 12px white inset, 0 0 0 12px white inset;
+  }
+  50% {
+    box-shadow: 0 0 0 3px white inset, 0 0 0 3px white inset;
+  }
+  to {
+    box-shadow: 0 0 0 4px white inset, 0 0 0 4px white inset;
+  }
+}
+.pg-radio {
+  --active-color: red;
+
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  transition: background, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+  appearance: none;
+  &:checked {
+    background-color: var(--active-color);
+    animation: radio-mark 0.2s ease-in-out;
+    box-shadow: 0 0 0 4px white inset, 0 0 0 4px white inset;
+  }
 }

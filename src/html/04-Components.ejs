@@ -36,7 +36,7 @@
             <my-code class="bg-white">
               <button
                 data-class="pg-btn pg-btn<%=s%> pg-btn--black"
-                class="pg-btn<%=s%> pg-btn pg-btn--black">
+                class="pg-btn<%=s%> pg-btn--black pg-btn">
                 BUTTON
               </button>
             </my-code>
@@ -55,7 +55,7 @@
               <button
                 disabled
                 data-class="pg-btn pg-btn<%=s%> pg-btn--black"
-                class="pg-btn<%=s%> pg-btn pg-btn--black">
+                class="pg-btn<%=s%> pg-btn--black pg-btn">
                 BUTTON
               </button>
             </my-code>
@@ -67,8 +67,42 @@
       <section data-name="form">
         <div>
           <label>
-            <input type="checkbox" class="pg-checkbox pg-mark--black bg-pg-red" />
+            <input type="checkbox" class="pg-checkbox--red pg-mark--black pg-checkbox" />
             <span>checkbox</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" class="pg-checkbox--black pg-checkbox" />
+            <span>checkbox</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" class="pg-checkbox--black pg-checkbox" disabled />
+            <span>checkbox</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              class="pg-checkbox--black pg-checkbox"
+              disabled
+              checked />
+            <span>checkbox</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="radio" class="pg-radio pg-radio-red bg-pg-red" name="radio1" />
+            <span>radio</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="radio" class="pg-radio pg-radio-red bg-pg-red" name="radio1" />
+            <span>radio</span>
           </label>
         </div>
       </section>

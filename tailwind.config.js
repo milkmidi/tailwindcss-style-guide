@@ -58,46 +58,9 @@ module.exports = {
         '.pg-container-section': { 'max-width': '2560px' },
         '.pg-container-outer': { 'max-width': '1720px' },
         '.pg-container-inner': { 'max-width': '1240px' },
-        // Components
-        '.pg-btn': {
-          '--pg-btn-height': '40px',
-          '--pg-btn-font-size': '14px',
-          height: 'var(--pg-btn-height)',
-          'border-radius': '8px',
-          'font-size': 'var(--pg-btn-font-size)',
-          'padding-left': '24px',
-          'padding-right': '24px',
-          '@apply inline-flex justify-center items-center': {}, // cssInJS 可以用這樣寫
-          '&:disabled, &[data-disabled="true"]': {
-            'background-color': '#B8B8B8 !important',
-            'pointer-events': 'none',
-            color: '#878787 !important',
-          },
-          '&.pg-btn--sm': {
-            '--pg-btn-height': '32px',
-            '--pg-btn-font-size': '12px',
-          },
-          '&.pg-btn--lg': {
-            '--pg-btn-height': '48px',
-            '--pg-btn-font-size': '16px',
-          },
-          '&.pg-btn--xl': {
-            '--pg-btn-height': '58px',
-            '--pg-btn-font-size': '18px',
-          },
-          '&.pg-btn--2xl': {
-            '--pg-btn-height': '68px',
-            '--pg-btn-font-size': '24px',
-          },
-          '&.pg-btn--red': {
-            '@apply bg-pg-red text-white hover:bg-pg-red-hover active:bg-pg-red-active':
-              {},
-          },
-          '&.pg-btn--black': {
-            '@apply bg-black text-white hover:bg-pg-black-hover active:bg-pg-black-active':
-              {},
-          },
-        },
+        // Components defined in _components.scss
+        '.pg-btn': {},
+        '.pg-checkbox': {},
       });
 
       const utilities = {
