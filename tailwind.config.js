@@ -30,7 +30,8 @@ module.exports = {
           DEFAULT: '#FFD91A',
         },
         'pg-red': {
-          DEFAULT: '#E02020',
+          // DEFAULT: '#E02020',
+          DEFAULT: 'var(--pg-red)',
           hover: '#FF2424',
           active: '#C20E0E',
         },

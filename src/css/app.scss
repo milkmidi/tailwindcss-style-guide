@@ -8,4 +8,12 @@
 
 /* components.css */
 @import './includes/typography';
+@import './includes/components';
 @import './includes/development'; /* 本機開發用 */
+
+@layer base {
+  :root {
+    --pg-red: #e02020;
+    --pg-green: theme('colors.pg-green.DEFAULT');
+  }
+}

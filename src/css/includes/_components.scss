@@ -1,0 +1,38 @@
+@keyframes check-mark {
+  0% {
+    background-position-y: 5px;
+  }
+  50% {
+    background-position-y: -2px;
+  }
+  to {
+    background-position-y: 0;
+  }
+}
+.pg-checkbox {
+  --mark-color: white;
+
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  background-color: var(--checkbox-color);
+  &[data-checked="true"],
+  &:checked {
+    background-repeat: no-repeat;
+    background-color: var(--checkbox-color);
+    border-color: var(--checkbox-color);
+    animation: check-mark 0.2s ease-in-out;
+    background-image:
+      linear-gradient(-45deg, transparent 65%, var(--checkbox-color) 65.99%),
+      linear-gradient(45deg, transparent 75%, var(--checkbox-color) 75.99%),
+      linear-gradient(-45deg, var(--checkbox-color) 40%, transparent 40.99%),
+      linear-gradient(45deg, var(--checkbox-color) 30%, var(--mark-color) 30.99%, var(--mark-color) 40%, transparent 40.99%),
+      linear-gradient(-45deg, var(--mark-color) 50%, var(--checkbox-color) 50.99%);
+  }
+  &.bg-pg-red {
+    --checkbox-color: var(--pg-red);
+  }
+}
+.pg-mark--black {
+  --mark-color: black;
+}
