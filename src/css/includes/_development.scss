@@ -68,4 +68,10 @@
     border-radius: 50px;
     transition: all 0.2s;
   }
+  .my-tab {
+    background: red;
+    &[data-active="true"] {
+      background: blue;
+    }
+  }
 }
