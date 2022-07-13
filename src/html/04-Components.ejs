@@ -1,116 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="pg-font-proxima-nova">
   <%- include('./components/header.ejs') -%>
 
-  <body>
-    <a href="index.html" class="my-btn">Back</a>
+  <body class="px-4">
+    <a href="index.html" class="pg-btn pg-btn--outline">Back</a>
     <div class="container mx-auto">
-      <section data-name="button with brand color">
+      <section data-name="Buttons with brand colors">
         <my-preview>
           <div data-preview>
-            <button class="pg-btn--red pg-btn">RED</button>
-            <button class="pg-btn--red pg-btn--lg pg-btn">RED</button>
+            <button class="pg-btn pg-btn--red">RED</button>
+            <button class="pg-btn pg-btn--yellow">YELLOW</button>
+            <button class="pg-btn pg-btn--green">GREEN</button>
+            <button class="pg-btn pg-btn--black">BLACK</button>
+            <button class="pg-btn pg-btn--white">WHITE</button>
           </div>
         </my-preview>
-        <div class="-mx-2 flex flex-wrap child:px-2">
-          <%
-          <!-- prettier-ignore -->
-          const SIZE = ['--sm', '', '--lg', '--xl', '--2xl'];
-          for(let i =0; i < SIZE.length ; i++ ){
-            const s = SIZE[i];
-          %>
-          <div class="mb-3 w-1/3">
-            <my-code class="bg-white">
-              <button
-                data-class="pg-btn pg-btn<%=s%> pg-btn--red"
-                class="pg-btn<%=s%> pg-btn--red pg-btn">
-                BUTTON
-              </button>
-            </my-code>
-          </div>
-          <% } %>
-        </div>
-
-        <hr />
-        <div class="-mx-2 flex flex-wrap child:px-2">
-          <%
-          <!-- prettier-ignore -->
-          for(let i =0; i < SIZE.length ; i++ ){
-            const s = SIZE[i];
-          %>
-          <div class="mb-3 w-1/3">
-            <my-code class="bg-white">
-              <button
-                data-class="pg-btn pg-btn<%=s%> pg-btn--black"
-                class="pg-btn<%=s%> pg-btn--black pg-btn">
-                BUTTON
-              </button>
-            </my-code>
-          </div>
-          <% } %>
-        </div>
-
-        <div class="-mx-2 flex flex-wrap child:px-2">
-          <%
-          <!-- prettier-ignore -->
-          for(let i =0; i < SIZE.length ; i++ ){
-            const s = SIZE[i];
-          %>
-          <div class="mb-3 w-1/3">
-            <my-code class="bg-white">
-              <button
-                disabled
-                data-class="pg-btn pg-btn<%=s%> pg-btn--black"
-                class="pg-btn<%=s%> pg-btn--black pg-btn">
-                BUTTON
-              </button>
-            </my-code>
-          </div>
-          <% } %>
+        <div class="border">
+          <h1>TODO：need yellow, green, hover, active color</h1>
         </div>
       </section>
 
-      <section data-name="form">
-        <div>
-          <label>
-            <input type="checkbox" class="pg-checkbox--red pg-mark--black pg-checkbox" />
-            <span>checkbox</span>
-          </label>
+      <section data-name="Button disabled">
+        <my-preview>
+          <div data-preview>
+            <button disabled class="pg-btn pg-btn--red">DISABLED</button>
+            <!-- <button data-disabled="true" class="pg-btn pg-btn--red">DISABLED</button> -->
+          </div>
+        </my-preview>
+        <div class="border">
+          <h1>TODO：need yellow, green, hover, active color</h1>
         </div>
-        <div>
-          <label>
-            <input type="checkbox" class="pg-checkbox--black pg-checkbox" />
-            <span>checkbox</span>
-          </label>
+      </section>
+
+      <section data-name="Outline buttons">
+        <my-preview>
+          <div data-preview>
+            <button class="pg-btn pg-btn--outline">OUTLINE</button>
+            <button class="pg-btn pg-btn--outline-white">OUTLINE</button>
+          </div>
+        </my-preview>
+        <div class="border">
+          <h1>TODO：need yellow, green, hover, active color</h1>
         </div>
-        <div>
-          <label>
-            <input type="checkbox" class="pg-checkbox--black pg-checkbox" disabled />
-            <span>checkbox</span>
-          </label>
-        </div>
-        <div>
-          <label>
-            <input
-              type="checkbox"
-              class="pg-checkbox--black pg-checkbox"
-              disabled
-              checked />
-            <span>checkbox</span>
-          </label>
-        </div>
-        <div>
-          <label>
-            <input type="radio" class="pg-radio pg-radio-red bg-pg-red" name="radio1" />
-            <span>radio</span>
-          </label>
-        </div>
-        <div>
-          <label>
-            <input type="radio" class="pg-radio pg-radio-red bg-pg-red" name="radio1" />
-            <span>radio</span>
-          </label>
-        </div>
+      </section>
+
+      <section data-name="Buttons sizes">
+        <my-preview>
+          <div data-preview>
+            <button class="pg-btn pg-btn--red pg-btn--sm">sm</button>
+            <button class="pg-btn pg-btn--red">normal</button>
+            <button class="pg-btn pg-btn--red pg-btn--lg">lg</button>
+            <button class="pg-btn pg-btn--red pg-btn--xl">xl</button>
+            <button class="pg-btn pg-btn--red pg-btn--2xl">2xl</button>
+          </div>
+        </my-preview>
+      </section>
+
+      <section data-name="Form - checkbox">
+        <my-preview>
+          <div data-preview>
+            <input type="checkbox" class="pg-checkbox pg-checkbox--red" />
+            <input type="checkbox" class="pg-checkbox pg-checkbox--black" />
+            <input type="checkbox" class="pg-checkbox pg-checkbox--white" />
+          </div>
+        </my-preview>
+        <my-preview>
+          <div data-preview>
+            <input type="checkbox" class="pg-checkbox pg-checkbox--red pg-checkbox-mark--black" />
+            <input type="checkbox" class="pg-checkbox pg-checkbox--red pg-checkbox-mark--black" checked/>
+          </div>
+        </my-preview>
+        <my-preview>
+          <div data-preview>
+            <input type="checkbox" class="pg-checkbox pg-checkbox--red" disabled />
+            <input type="checkbox" class="pg-checkbox pg-checkbox--red" disabled checked />
+          </div>
+        </my-preview>
+      </section>
+
+      <section data-name="Form - radio">
+        <my-preview>
+          <div data-preview>
+            <input type="radio" class="pg-radio pg-radio--red" name="radio1" />
+            <input type="radio" class="pg-radio pg-radio--red" name="radio1" checked />
+            <input type="radio" class="pg-radio pg-radio--black" name="radio2" />
+            <input type="radio" class="pg-radio pg-radio--black" name="radio2" checked />
+            <input type="radio" class="pg-radio pg-radio--white" name="radio3" />
+            <input type="radio" class="pg-radio pg-radio--white" name="radio3" checked />
+          </div>
+        </my-preview>
+        <my-preview>
+          <div data-preview>
+            <input type="radio" class="pg-radio" name="radio4" disabled/>
+            <input type="radio" class="pg-radio" name="radio4" checked disabled />
+          </div>
+        </my-preview>
+      </section>
+
+      <section data-name="Form - input">
+        <my-preview>
+          <div data-preview class="flex flex-col !space-x-0 space-y-4">
+            <input type="text" class="pg-input" placeholder="placeholder" />
+            <input type="text" class="pg-input pg-input--red" value="Text" />
+            <input type="text" class="pg-input pg-input--green" value="Text" />
+          </div>
+        </my-preview>
       </section>
     </div>
   </body>

@@ -1,4 +1,8 @@
+%pg-base-component {
+}
 .pg-btn {
+  @extend %pg-base-component;
+
   --pg-btn-height: 40px;
   --pg-btn-font-size: 14px;
 
@@ -7,14 +11,9 @@
   height: var(--pg-btn-height);
   font-size: var(--pg-btn-font-size);
   border-radius: 8px;
+  letter-spacing: 1px;
 
   @apply inline-flex justify-center items-center;
-  &:disabled,
-  &[data-disabled="true"] {
-    color: #878787 !important;
-    background-color: #b8b8b8 !important;
-    pointer-events: none;
-  }
   &.pg-btn--sm {
     --pg-btn-height: 32px;
     --pg-btn-font-size: 12px;
@@ -32,10 +31,37 @@
     --pg-btn-font-size: 24px;
   }
   &.pg-btn--red {
-    @apply bg-pg-red text-white hover:bg-pg-red-hover active:bg-pg-red-active;
+    @apply bg-pg-red text-white;
+    &:enabled {
+      @apply hover:bg-pg-red-hover active:bg-pg-red-active;
+    }
   }
   &.pg-btn--black {
     @apply bg-black text-white hover:bg-pg-black-hover active:bg-pg-black-active;
+  }
+  &.pg-btn--yellow {
+    @apply bg-pg-yellow;
+  }
+  &.pg-btn--green {
+    @apply bg-pg-green;
+  }
+  &.pg-btn--white {
+    background-color: white;
+  }
+  &.pg-btn--outline {
+    color: black;
+    border: 1px solid black;
+  }
+  &.pg-btn--outline-white {
+    color: white;
+    border: 1px solid white;
+  }
+  &:disabled,
+  &[data-disabled="true"] {
+    color: #878787;
+    background-color: #b8b8b8;
+    pointer-events: none;
+    border-color: transparent;
   }
 }
 
@@ -77,6 +103,13 @@
   &.pg-checkbox--black {
     --active-color: black;
   }
+  &.pg-checkbox--white {
+    --active-color: white;
+    --checkmark-color: black;
+  }
+  &.pg-checkbox-mark--black {
+    --checkmark-color: black;
+  }
   &:disabled {
     --active-color: #ccc;
     --checkmark-color: #e4e4e4;
@@ -84,33 +117,67 @@
     pointer-events: none;
   }
 }
-.pg-mark--black {
-  --checkmark-color: black;
-}
 
 @keyframes radio-mark {
   0% {
-    box-shadow: 0 0 0 12px white inset, 0 0 0 12px white inset;
+    box-shadow: 0 0 0 12px var(--active-color) inset;
   }
   50% {
-    box-shadow: 0 0 0 3px white inset, 0 0 0 3px white inset;
+    box-shadow: 0 0 0 4px var(--active-color) inset;
   }
   to {
-    box-shadow: 0 0 0 4px white inset, 0 0 0 4px white inset;
+    box-shadow: 0 0 0 6px var(--active-color) inset;
   }
 }
 .pg-radio {
-  --active-color: red;
+  --active-color: theme('colors.pg-red.DEFAULT');
+  --checkmark-color: white;
 
   width: 20px;
   height: 20px;
+  background-color: var(--active-color);
   border-radius: 9999px;
   transition: background, box-shadow 0.2s ease-in-out;
   cursor: pointer;
   appearance: none;
   &:checked {
-    background-color: var(--active-color);
+    background-color: var(--checkmark-color);
     animation: radio-mark 0.2s ease-in-out;
-    box-shadow: 0 0 0 4px white inset, 0 0 0 4px white inset;
+    box-shadow: 0 0 0 6px var(--active-color) inset;
+  }
+  &.pg-radio--red {
+    --active-color: theme('colors.pg-red.DEFAULT');
+  }
+  &.pg-radio--black {
+    --active-color: black;
+  }
+  &.pg-radio--white {
+    --active-color: white;
+    &:checked {
+      --checkmark-color: black;
+    }
+  }
+  &:disabled {
+    --active-color: #ccc;
+    --checkmark-color: #e4e4e4;
+
+    pointer-events: none;
+  }
+}
+.pg-input {
+  padding: 10px 12px;
+  height: 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ccc;
+  border-radius: 4px;
+  &:focus {
+    outline: none;
+  }
+  &.pg-input--red {
+    border-color: var(--pg-red);
+  }
+  &.pg-input--green {
+    border-color: var(--pg-green);
   }
 }

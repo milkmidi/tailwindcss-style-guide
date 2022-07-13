@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 /* eslint-disable arrow-body-style */
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -8,7 +9,7 @@ const chokidar = require('chokidar');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const DEV_MODE = process.env.NODE_ENV === 'development';
-const tailwindConfig = require('./tailwind.config.js')
+const tailwindConfig = require('./tailwind.config');
 
 const createHtml = (name, chunks = []) => {
   return new HtmlWebpackPlugin({
@@ -112,7 +113,7 @@ const webpackConfig = {
             options: {
               data: {
                 BUILD_INFO: new Date().toJSON(),
-                TAILWIND_COLORS: tailwindConfig.theme.extend.colors
+                TAILWIND_COLORS: tailwindConfig.theme.extend.colors,
               },
               // esModule: false,
             },
@@ -187,13 +188,11 @@ const webpackConfig = {
         APP_ENV: JSON.stringify(process.env.APP_ENV),
       },
     }),
-    ...DEV_MODE
+    ...(DEV_MODE
       ? [
-        // new FriendlyErrorsPlugin(),
-      ]
-      : [
-        new OptimizeCSSAssetsPlugin({}),
-      ],
+          // new FriendlyErrorsPlugin(),
+        ]
+      : [new OptimizeCSSAssetsPlugin({})]),
   ],
 
   optimization: {

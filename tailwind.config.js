@@ -30,8 +30,7 @@ module.exports = {
           DEFAULT: '#FFD91A',
         },
         'pg-red': {
-          // DEFAULT: '#E02020',
-          DEFAULT: 'var(--pg-red)',
+          DEFAULT: '#E02020',
           hover: '#FF2424',
           active: '#C20E0E',
         },
@@ -59,7 +58,11 @@ module.exports = {
         '.pg-container-outer': { 'max-width': '1720px' },
         '.pg-container-inner': { 'max-width': '1240px' },
         // Components defined in _components.scss
-        '.pg-btn': {},
+        '.pg-btn': {
+          '&': {
+            '.pg-btn--red': {},
+          },
+        },
         '.pg-checkbox': {},
       });
 
